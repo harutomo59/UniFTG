@@ -49,6 +49,9 @@
      <Compile Include="Assets\Scripts\CharactorMove.cs" />
      <Compile Include="Assets\Scripts\GameRootScript.cs" />
      <Compile Include="Assets\Scripts\Key.cs" />
+     <Compile Include="Assets\Scripts\attackRoot.cs" />
+     <Compile Include="Assets\Scripts\hanteiDeleteTime.cs" />
+     <Compile Include="Assets\Scripts\shotScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

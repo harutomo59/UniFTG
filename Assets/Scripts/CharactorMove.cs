@@ -11,6 +11,9 @@ public class CharactorMove : Key {
 	public GameObject atk1 = null;
 	public GameObject atk2 = null;
 	public GameObject atk3 = null;
+	public GameObject atk4 = null;
+	public GameObject ats1 = null;
+	public GameObject ats2 = null;
 	
 	private bool onGround = false;
 	private bool atLeft = true;
@@ -26,11 +29,15 @@ public class CharactorMove : Key {
 	enum STATE{
 		NONE,
 		NORMAL,
+		KAGAMI,
 		JUMP,
 		DASH,
+		BACK,
 		DASH_JUMP,
 		ATTACK,
 		STIFF,
+		DOWN,
+		TOBI,
 		NUM
 	};
 	STATE now_step=STATE.NONE;
@@ -40,6 +47,10 @@ public class CharactorMove : Key {
 		checkSide ();
 		now_step = next_step;
 		next_step = STATE.NONE;
+
+		float wazaX = 0.0f;
+		float wazaY = 0.0f;
+		float wazaZ = 0.0f;
 		
 		if (now_step == STATE.ATTACK) {
 			actionTime += Time.deltaTime;
@@ -60,14 +71,53 @@ public class CharactorMove : Key {
 		} else
 		if (now_step == STATE.NORMAL || now_step == STATE.DASH) {
 			
+			if (keyinput.atk1) {
+				if(setNext (STATE.ATTACK)){
+					GameObject g = GameObject.Instantiate (this.atk1) as GameObject;
+					//g.transform.parent = this.transform;
+					g.transform.position = this.transform.position;
+					wazaX = 0.75f; wazaY = 0.5f;
+					if(atLeft == false) wazaX *= -1;
+					g.transform.Translate (new Vector3 (wazaX, wazaY, wazaZ));
+					actionTime = 0.0f;
+					actionTimeLimit = 0.1f;
+				}
+			}
+			if (keyinput.atk2) {
+				if(setNext (STATE.ATTACK)){
+					GameObject g = GameObject.Instantiate (this.atk2) as GameObject;
+					//g.transform.parent = this.transform;
+					g.transform.position = this.transform.position;
+					wazaX = 0.75f; wazaY = 0.5f;
+					if(atLeft == false) wazaX *= -1;
+					g.transform.Translate (new Vector3 (wazaX, wazaY, wazaZ));
+					actionTime = 0.0f;
+					actionTimeLimit = 0.22f;
+				}
+			}
 			if (keyinput.atk3) {
-				GameObject g = GameObject.Instantiate (this.atk3) as GameObject;
-				//g.transform.parent = this.transform;
-				g.transform.position = this.transform.position;
-				g.transform.Translate (new Vector3 (1.5f, 1.5f, 0.0f));
-				actionTime = 0.0f;
-				actionTimeLimit = 0.4f;
-				setNext (STATE.ATTACK);
+				if(setNext (STATE.ATTACK)){
+					GameObject g = GameObject.Instantiate (this.atk3) as GameObject;
+					//g.transform.parent = this.transform;
+					g.transform.position = this.transform.position;
+					wazaX = 0.75f; wazaY = 0.5f;
+					if(atLeft == false) wazaX *= -1;
+					g.transform.Translate (new Vector3 (wazaX, wazaY, wazaZ));
+					actionTime = 0.0f;
+					actionTimeLimit = 0.4f;
+				}
+			}
+			if (keyinput.atk4) {
+				if(setNext (STATE.ATTACK)){
+					GameObject g = GameObject.Instantiate (this.atk4) as GameObject;
+					//g.transform.parent = this.transform;
+					g.transform.position = this.transform.position;
+					wazaX = 1.5f; wazaY = 1.5f;
+					if(atLeft == false) wazaX *= -1;
+					g.transform.Translate (new Vector3 (wazaX, wazaY, wazaZ));
+					actionTime = 0.0f;
+					actionTimeLimit = 0.4f;
+				}
 			}
 			
 			if (keyinput.up == true) {

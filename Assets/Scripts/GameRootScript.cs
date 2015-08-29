@@ -25,10 +25,16 @@ public class GameRootScript : Key {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+/*	void Update () {
 		if (mySide == "Player1") {
 			tes1.ta (getInputKye ());
 		}
-		
+
+	}
+*/
+	void FixedUpdate(){
+		if (mySide == "Player1") {
+			tes1.ta (getInputKye ());
+		}
 	}
 }
