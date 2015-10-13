@@ -1,9 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\FTG\Assets\pretest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\Unity_shooting\Assets\Scenes\Game_Stage1\Script\Spaceship.cs">
     <Files>
-      <File FileName="..\Unity_shooting\Assets\Scripts\StaffrollScript.cs" Line="17" Column="12" />
-      <File FileName="..\FTG\Assets\pretest.cs" Line="1" Column="1" />
+      <File FileName="..\Unity_shooting\Assets\Scenes\Game_Stage1\Script\Spaceship.cs" Line="73" Column="3" />
+      <File FileName="..\Unity_shooting\Assets\Scenes\Game_Stage1\Script\GameController.cs" Line="1" Column="1" />
+      <File FileName="..\Unity_shooting\Assets\Scenes\Game_Stage1\Script\Player.cs" Line="106" Column="21" />
+      <File FileName="..\Unity_shooting\Assets\Scenes\Staffroll\OriginalBulletSettings.cs" Line="113" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
